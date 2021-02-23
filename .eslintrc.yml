@@ -64,7 +64,7 @@ rules:
     - warn
     - ignoreEOLComments: true
   no-multi-str: error
-  no-new: error
+  # no-new: error
   no-new-func: error
   no-new-wrappers: error
   no-octal-escape: error

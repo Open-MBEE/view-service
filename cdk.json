@@ -1,5 +1,5 @@
 {
-  "app": "node bin/view-service.js",
+  "app": "node bin/view-service.mjs",
   "context": {
     "@aws-cdk/core:enableStackNameDuplicates": "true",
     "aws-cdk:enableDiffNoFail": "true",

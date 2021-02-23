@@ -1,8 +1,9 @@
 {
   "name": "view-service",
+  "private": true,
   "version": "0.1.0",
   "bin": {
-    "view-service": "bin/view-service.js"
+    "view-service": "bin/view-service.mjs"
   },
   "scripts": {
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@aws-cdk/assert": "1.90.1",
     "aws-cdk": "1.90.1",
+    "eslint": "^7.20.0",
     "jest": "^26.6.3"
   },
   "dependencies": {
@@ -25,7 +27,7 @@
     "@aws-cdk/aws-stepfunctions": "^1.90.1",
     "@aws-cdk/aws-stepfunctions-tasks": "^1.90.1",
     "@aws-cdk/core": "^1.90.1",
-    "@aws-sdk/client-s3": "^3.6.0",
+    "@aws-sdk/client-s3": "^3.6.1",
     "confluence-mdk": "^3.0.2",
     "stream-json": "^1.7.1",
     "tmp": "^0.2.1",

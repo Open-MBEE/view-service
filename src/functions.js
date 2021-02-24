@@ -3,7 +3,7 @@ import {CopyObjectCommand, PutObjectCommand, S3Client} from '@aws-sdk/client-s3'
 import crypto from 'crypto';
 import fs from 'fs';
 import tmp from 'tmp';
-import uuid from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 // TODO Separate files for each function to enable better minification and reduce deploy churn on modification
 export async function exportConfluencePage(event) {
@@ -104,7 +104,7 @@ export async function popConfluencePageTree(event) {
 }
 
 export function generateUuid() {
-    return uuid.v4();
+    return uuidv4();
 }
 
 export function flattenArray(event) {

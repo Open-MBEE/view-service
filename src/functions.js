@@ -103,16 +103,18 @@ export async function popConfluencePageTree(event) {
     };
 }
 
-export function generateUuid() {
+// eslint-disable-next-line require-await
+export async function generateUuid() {
     return Promise.resolve(uuidv4());
 }
 
-export function flattenArray(event) {
+// eslint-disable-next-line require-await
+export async function flattenArray(event) {
     const isEventArray = Array.isArray(event);
     if(!isEventArray && !Array.isArray(event?.args)) {
         throw new Error('Event must be an array or an object with an `args` key that is an array');
     }
-    return Promise.resolve((isEventArray ? event : event.args).flat());
+    return (isEventArray ? event : event.args).flat();
 }
 
 export function copyS3Object(event) {

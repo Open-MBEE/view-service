@@ -92,7 +92,7 @@ export async function popConfluencePageTree(event) {
             recurse: false,
         }));
         // push to stack in reverse order for left-to-right traversal
-        children.reverse().forEach((_, child) => stack.push(child));
+        children.reverse().forEach(child => stack.push(child));
     }
     return {
         stack: stack,
@@ -103,11 +103,11 @@ export async function popConfluencePageTree(event) {
     };
 }
 
-export function generateUuid() {
+export async function generateUuid() {
     return uuidv4();
 }
 
-export function flattenArray(event) {
+export async function flattenArray(event) {
     const isEventArray = Array.isArray(event);
     if(!isEventArray && !Array.isArray(event?.args)) {
         throw new Error('Event must be an array or an object with an `args` key that is an array');

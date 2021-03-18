@@ -25,6 +25,7 @@
     "@aws-cdk/aws-neptune": "^1.91.0",
     "@aws-cdk/aws-s3": "^1.91.0",
     "@aws-cdk/aws-s3-deployment": "^1.91.0",
+    "@aws-cdk/aws-secretsmanager": "^1.91.0",
     "@aws-cdk/aws-stepfunctions": "^1.91.0",
     "@aws-cdk/aws-stepfunctions-tasks": "^1.91.0",
     "@aws-cdk/core": "^1.91.0",

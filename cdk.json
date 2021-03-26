@@ -8,7 +8,11 @@
     "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true,
     "@aws-cdk/aws-kms:defaultKeyPolicies": true,
     "@aws-cdk/aws-s3:grantWriteWithoutAcl": true,
-    "confluence_secret_arn": "",
-    "confluence_secret_key": ""
+    "stack:vpcId": "vpc-8853e6ed",
+    "stack:rolePrefix": "AM-",
+    "stack:policyPrefix": "",
+    "stack:permissionsBoundary": "Security_Boundary_NoIAM",
+    "secret_arn": "arn:aws-us-gov:secretsmanager:us-gov-west-1:446544567758:secret:ViewServiceSecrets-GEuxuS",
+    "confluence_token_key": "ConfluenceToken"
   }
 }

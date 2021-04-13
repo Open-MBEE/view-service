@@ -1,4 +1,7 @@
 node_modules
+.DS_Store
+.env*
+.ignore
 
 # CDK asset staging directory
 .cdk.staging

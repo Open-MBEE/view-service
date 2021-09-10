@@ -7,6 +7,14 @@
     "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
     "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true,
     "@aws-cdk/aws-kms:defaultKeyPolicies": true,
-    "@aws-cdk/aws-s3:grantWriteWithoutAcl": true
+    "@aws-cdk/aws-s3:grantWriteWithoutAcl": true,
+    "stack:vpcId": "vpc-8853e6ed",
+    "stack:rolePrefix": "AM-",
+    "stack:policyPrefix": "",
+    "stack:permissionsBoundary": "Security_Boundary_NoIAM",
+    "secret_arn": "arn:aws-us-gov:secretsmanager:us-gov-west-1:446544567758:secret:ViewServiceSecrets-GEuxuS",
+    "confluence_token_key": "ConfluenceToken",
+    "confluence_user_key": "ConfluenceUser",
+    "confluence_pass_key": "ConfluencePass"
   }
 }

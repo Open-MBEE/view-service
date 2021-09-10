@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@aws-cdk/aws-ec2": "^1.91.0",
+    "@aws-cdk/aws-ecs": "1.91.0",
+    "@aws-cdk/aws-ecs-patterns": "1.91.0",
     "@aws-cdk/aws-iam": "^1.91.0",
     "@aws-cdk/aws-lambda": "^1.91.0",
     "@aws-cdk/aws-lambda-nodejs": "1.91.0",
@@ -30,7 +32,7 @@
     "@aws-cdk/aws-stepfunctions-tasks": "^1.91.0",
     "@aws-cdk/core": "^1.91.0",
     "@aws-sdk/client-s3": "^3.7.0",
-    "confluence-mdk": "^3.1.0",
+    "confluence-mdk": "^3.3.0",
     "stream-json": "^1.7.1",
     "tmp": "^0.2.1",
     "uuid": "^8.3.2"

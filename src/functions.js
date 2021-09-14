@@ -74,6 +74,7 @@ export async function mapConfluencePageToChildren(event) {
 export async function popConfluencePageTree(event) {
     const stack = event.stack ?? [];
     const limit = event.limit ?? 1;
+    const space = event.space ?? '';
 
     const result = [];
     for(let i = 0; i < limit; i++) {
@@ -98,6 +99,7 @@ export async function popConfluencePageTree(event) {
         stack: stack,
         limit: limit,
         result: result,
+        space: space,
         ...event.server && {server: event.server},
         ...event.as_urls && {as_urls: event.as_urls},
     };

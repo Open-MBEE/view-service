@@ -15,6 +15,7 @@
     "secret_arn": "arn:aws-us-gov:secretsmanager:us-gov-west-1:446544567758:secret:ViewServiceSecrets-GEuxuS",
     "confluence_token_key": "ConfluenceToken",
     "confluence_user_key": "ConfluenceUser",
-    "confluence_pass_key": "ConfluencePass"
+    "confluence_pass_key": "ConfluencePass",
+    "notification_endpoint": "Notification"
   }
 }

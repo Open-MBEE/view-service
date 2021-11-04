@@ -7,6 +7,19 @@
     "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
     "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": true,
     "@aws-cdk/aws-kms:defaultKeyPolicies": true,
-    "@aws-cdk/aws-s3:grantWriteWithoutAcl": true
+    "@aws-cdk/aws-s3:grantWriteWithoutAcl": true,
+    "stack:vpcId": "vpc-0873caa870c57790c",
+    "stack:rolePrefix": "AM-",
+    "stack:policyPrefix": "",
+    "stack:permissionsBoundary": "Security_Boundary_NoIAM",
+    "stack:neptuneEndpoint": "",
+    "stack:neptuneLoadingRoleArn": "arn:aws-us-gov:iam::446544567758:role/AM-DngMdkJobsStackNeptuneLoadingRole",
+    "stack:neptuneConsumerSecurityGroupId": "sg-0b122b758d3213d22",
+    "secret_arn": "arn:aws-us-gov:secretsmanager:us-gov-west-1:446544567758:secret:ViewServiceSecrets-GEuxuS",
+    "confluence_token_key": "ConfluenceToken",
+    "confluence_user_key": "ConfluenceUser",
+    "confluence_pass_key": "ConfluencePass",
+    "notification_endpoint_key": "NotificationEndpoint",
+    "sparql_endpoint_key": "SparqlEndpoint"
   }
 }

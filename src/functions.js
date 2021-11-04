@@ -5,6 +5,8 @@ import fs from 'fs';
 import tmp from 'tmp';
 import {v4 as uuidv4} from 'uuid';
 
+const fetch = require('node-fetch');
+
 // TODO Separate files for each function to enable better minification and reduce deploy churn on modification
 export async function exportConfluencePage(event) {
     const requestId = event.requestId;
@@ -74,6 +76,7 @@ export async function mapConfluencePageToChildren(event) {
 export async function popConfluencePageTree(event) {
     const stack = event.stack ?? [];
     const limit = event.limit ?? 1;
+    const space = event.space ?? '';
 
     const result = [];
     for(let i = 0; i < limit; i++) {
@@ -98,6 +101,7 @@ export async function popConfluencePageTree(event) {
         stack: stack,
         limit: limit,
         result: result,
+        space: space,
         ...event.server && {server: event.server},
         ...event.as_urls && {as_urls: event.as_urls},
     };
@@ -146,6 +150,26 @@ export function clearNeptuneGraph(event) {
 
 export function loadNeptuneGraph(event) {
     return neptuneLoad(_buildImportConfig(event));
+}
+
+export async function sendNotification(event) {
+    const endpoint = process.env.NOTIFICATION_ENDPOINT;
+    console.log('ENDPOINT: ' + endpoint);
+    if(!endpoint) {
+        throw new Error('Environment variable `NOTIFICATION_ENDPOINT` not provided');
+    }
+    const payload = {
+        text: event.job + " for " + event.space + " completed with status: " + event.status
+    };
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    console.log(response);
+    return response;
 }
 
 function _buildExportConfig(options) {

@@ -1,4 +1,4 @@
-import {neptuneClear, neptuneLoad, wikiExport, wikiChildPages} from 'confluence-mdk';
+import {neptuneClear, neptuneLoad, wikiExport, wikiChildPages, checkStatus} from 'confluence-mdk';
 import {CopyObjectCommand, PutObjectCommand, S3Client} from '@aws-sdk/client-s3';
 import crypto from 'crypto';
 import fs from 'fs';
@@ -152,6 +152,10 @@ export function loadNeptuneGraph(event) {
     return neptuneLoad(_buildImportConfig(event));
 }
 
+export function checkLoadStatus(event) {
+    return checkStatus(_buildImportConfig(event));
+}
+
 export async function sendNotification(event) {
     const endpoint = process.env.NOTIFICATION_ENDPOINT;
     console.log('ENDPOINT: ' + endpoint);
@@ -187,5 +191,6 @@ function _buildImportConfig(options) {
     return {
         ...options.graph && {graph: options.graph},
         ...options.prefix && {prefix: options.prefix},
+        ...options.jobId && {jobId: options.jobId},
     };
 }

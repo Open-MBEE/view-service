@@ -5,8 +5,6 @@ import fs from 'fs';
 import tmp from 'tmp';
 import {v4 as uuidv4} from 'uuid';
 
-const fetch = require('node-fetch');
-
 // TODO Separate files for each function to enable better minification and reduce deploy churn on modification
 export async function exportConfluencePage(event) {
     const requestId = event.requestId;

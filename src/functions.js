@@ -1,11 +1,9 @@
-import {neptuneClear, neptuneLoad, wikiExport, wikiChildPages} from 'confluence-mdk';
+import {neptuneClear, neptuneLoad, wikiExport, wikiChildPages, checkStatus} from 'confluence-mdk';
 import {CopyObjectCommand, PutObjectCommand, S3Client} from '@aws-sdk/client-s3';
 import crypto from 'crypto';
 import fs from 'fs';
 import tmp from 'tmp';
 import {v4 as uuidv4} from 'uuid';
-
-const fetch = require('node-fetch');
 
 // TODO Separate files for each function to enable better minification and reduce deploy churn on modification
 export async function exportConfluencePage(event) {
@@ -152,6 +150,10 @@ export function loadNeptuneGraph(event) {
     return neptuneLoad(_buildImportConfig(event));
 }
 
+export function checkLoadStatus(event) {
+    return checkStatus(_buildImportConfig(event));
+}
+
 export async function sendNotification(event) {
     const endpoint = process.env.NOTIFICATION_ENDPOINT;
     console.log('ENDPOINT: ' + endpoint);
@@ -187,5 +189,6 @@ function _buildImportConfig(options) {
     return {
         ...options.graph && {graph: options.graph},
         ...options.prefix && {prefix: options.prefix},
+        ...options.jobId && {jobId: options.jobId},
     };
 }
